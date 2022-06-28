@@ -13,11 +13,12 @@ const { DATE } = require('sequelize')
 const Thought = require('./models/Thought')
 const User = require('./models/User')
 
-//Routes
+// Import Routes
 const thoughtsRoutes = require('./routes/thoughtsRoutes')
+const authRoutes = require('./routes/authRoutes')
 
-//Controllers
-const ThoughtController = require('./controllers/ThoughtController')
+// Import Controllers
+const thoughtController = require('./controllers/ThoughtController')
 
 // template engine
 app.engine('handlebars', exphbs.engine())
@@ -66,8 +67,9 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/thoughts', thoughtsRoutes)
+app.use('/', authRoutes)
 
-app.get('/', ThoughtController.showThoughts)
+app.get('/', thoughtController.showThoughts)
 
 conn
     .sync()
