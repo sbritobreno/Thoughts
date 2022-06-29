@@ -1,0 +1,8 @@
+[33m9ef7502[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Register new user into the system
+[33m63be128[m Implement Flash message
+[33m0e449dc[m[33m ([m[1;31morigin/master[m[33m)[m css style for register view
+[33ma18f6b5[m Create Auth routes, views, and controller
+[33m4d2ddd1[m Merge branch 'master' of https://github.com/sbritobreno/Thoughts
+[33ma80e0a6[m Create Models, Controller, and Database connection
+[33m2b49f7e[m Create README.md
+[33m4d30d4a[m Initial commit
