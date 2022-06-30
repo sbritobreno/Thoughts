@@ -163,21 +163,21 @@
   }
   
   /* CREATE / EDIT FORM */
-  .tought-form-container a {
+  .thought-form-container a {
     color: #f6982d;
   }
   
-  .tought-form-container a:hover {
+  .thought-form-container a:hover {
     color: #fff;
   }
   
-  .tought-form-container h1 {
+  .thought-form-container h1 {
     border-left: 4px solid #f6982d;
     padding: 10px;
     margin-top: 1em;
   }
   
-  .tought-form-container form {
+  .thought-form-container form {
     max-width: 30%;
     margin-top: 1.5em;
   }
