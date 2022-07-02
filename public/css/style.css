@@ -246,7 +246,8 @@
   }
   
   .order-container button:hover,
-  .order-container a:hover {
+  .order-container a:hover,
+  .order-container i:hover {
     color: #f6982d;
   }
   
@@ -257,23 +258,23 @@
   }
   
   .order-container i {
-    color: #f6982d;
+    color: #fff;
   }
   
-  .toughts-container figure {
+  .thoughts-container figure {
     border-bottom: 1px solid #333;
     padding: 0.5em;
     max-width: 50%;
     margin: 0 auto 1em;
   }
   
-  .toughts-container blockquote {
+  .thoughts-container blockquote {
     font-style: italic;
     font-size: 2em;
     margin-bottom: 0.4em;
   }
   
-  .toughts-container span {
+  .thoughts-container span {
     color: #f6982d;
   }
   
