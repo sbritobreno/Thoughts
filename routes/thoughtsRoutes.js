@@ -8,6 +8,8 @@ router.get('/', ThoughtController.showThoughts)
 router.get('/dashboard', checkAuth, ThoughtController.dashboard)
 router.get('/add', checkAuth, ThoughtController.createThought)
 router.post('/add', checkAuth, ThoughtController.createThoughtSave)
+router.get('/edit/:id', checkAuth, ThoughtController.editThought)
+router.post('/edit', checkAuth, ThoughtController.editThoughtSave)
 router.post('/remove', checkAuth, ThoughtController.removeThought)
 
 module.exports = router

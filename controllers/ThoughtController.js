@@ -18,7 +18,13 @@ module.exports = class ThoughtController {
 
         const thoughts = user.Thoughts.map((result) => result.dataValues)
 
-        res.render('thoughts/dashboard', {thoughts})
+        let emptyThoughts = false
+
+        if(thoughts.length === 0){
+            emptyThoughts = true
+        }
+
+        res.render('thoughts/dashboard', {thoughts, emptyThoughts})
     }
 
     static createThought(req, res){
@@ -53,6 +59,34 @@ module.exports = class ThoughtController {
             await Thought.destroy({where: {id: id, UserId: userId}})
 
             req.flash('message', 'Pensamento removido com sucesso!')
+            
+            req.session.save(() => {
+                res.redirect('/thoughts/dashboard')
+            })
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    static async editThought(req, res){
+        const id = req.params.id
+        const thought = await Thought.findOne({where: {id: id}, raw: true})
+
+        res.render('thoughts/edit', { thought })
+    }
+
+    static async editThoughtSave(req, res){
+        const id = req.body.id
+
+        const thought = {
+            title: req.body.title,
+        }
+
+        try {
+            await Thought.update(thought, {where: {id: id}})
+
+            req.flash('message', 'Pensamento editado com sucesso!')
             
             req.session.save(() => {
                 res.redirect('/thoughts/dashboard')
